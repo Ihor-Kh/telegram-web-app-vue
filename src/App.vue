@@ -1,10 +1,12 @@
 <template>
 	<div id="app">
+		<h1>Тест приложения VUE в telegram bot</h1>
+		<br>
 		<div>
 			<div>Типа имя <span>{{tg.initDataUnsafe?.user?.username}}</span></div>
 			<button @click="tgClose" class="btn-tg">Закрыть</button>
 		</div>
-		<h1>Тест приложения VUE в telegram bot</h1>
+
 
 	</div>
 </template>
