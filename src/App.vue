@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<div>
-			<div>Типа имя <span>{{user?.username}}</span></div>
+			<div>Типа имя <span>{{tg.initDataUnsafe?.user?.username}}</span></div>
 			<button @click="tgClose" class="btn-tg">Закрыть</button>
 		</div>
 		<h1>Тест приложения VUE в telegram bot</h1>
@@ -11,17 +11,15 @@
 
 <script>
 
-import {useTelegram} from '@/hooks/useTelegram'
 export default {
-	name: "test",
 	data(){
 		return {
-			tg: useTelegram.tg,
+			tg: window.Telegram.WebApp
 		}
 	},
 	methods: {
 		tgClose(){
-			this.useTelegram.onClose()
+			this.tg.close()
 		}
 	}
 }
