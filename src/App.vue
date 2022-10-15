@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <router-view />
+<!--    <router-view />-->
+	  <div>Тест приложения VUE в telegram bot</div>
   </div>
 </template>
 
