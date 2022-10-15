@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<div>
-<!--			<div>Типа имя <span>{{tg.initDataUnsafe?.}}</span></div>-->
+			<div>Типа имя <span>{{tg.initDataUnsafe?.user?.username}}</span></div>
 			<button class="btn-tg">Закрыть</button>
 		</div>
 		<h1>Тест приложения VUE в telegram bot</h1>
