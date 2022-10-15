@@ -2,7 +2,7 @@
 	<div id="app">
 		<div>
 			<div>Типа имя <span>{{tg.initDataUnsafe?.user?.username}}</span></div>
-			<button class="btn-tg">Закрыть</button>
+			<button @click="tgClose" class="btn-tg">Закрыть</button>
 		</div>
 		<h1>Тест приложения VUE в telegram bot</h1>
 
@@ -15,6 +15,11 @@ export default {
 	data(){
 		return {
 			tg: window.Telegram.WebApp
+		}
+	},
+	methods: {
+		tgClose(){
+			this.tg.close()
 		}
 	}
 }
