@@ -6,7 +6,10 @@
 			<div>Типа имя <span>{{tg.initDataUnsafe?.user?.username}}</span></div>
 			<button @click="tgClose" class="btn-tg">Закрыть</button>
 		</div>
-
+		<div>
+			<input v-model="text1" type="text" placeholder="Напиши тут что-то">
+			<input v-model="text2" type="text" placeholder="И тут тоже">
+		</div>
 
 	</div>
 </template>
@@ -16,13 +19,24 @@
 export default {
 	data(){
 		return {
-			tg: window.Telegram.WebApp
+			tg: window.Telegram.WebApp,
+			text1: '',
+			text2: '',
+			useTgButton: 'hide'
 		}
 	},
 	methods: {
 		tgClose(){
 			this.tg.close()
 		}
+	},
+	mounted() {
+		this.tg.MainButton.setParams({
+			text: 'Отправить данные!'
+		})
+	},
+	watch: {
+
 	}
 }
 </script>
