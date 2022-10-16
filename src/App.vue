@@ -10,6 +10,7 @@
 			<input v-model="text1" type="text" placeholder="Напиши тут что-то">
 			<input v-model="text2" type="text" placeholder="И тут тоже">
 		</div>
+		<div>{{test}}</div>
 
 	</div>
 </template>
@@ -22,7 +23,8 @@ export default {
 			tg: window.Telegram.WebApp,
 			text1: '',
 			text2: '',
-			useTgButton: 'hide'
+			useTgButton: 'hide',
+			test: ''
 		}
 	},
 	methods: {
@@ -34,6 +36,8 @@ export default {
 		this.tg.MainButton.setParams({
 			text: 'Отправить данные!'
 		})
+		this.tg.MainButton.show()
+		this.test = 'Кнопка должна появится!'
 	},
 	watch: {
 
