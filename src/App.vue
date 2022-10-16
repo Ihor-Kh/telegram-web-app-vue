@@ -34,13 +34,17 @@ export default {
 	methods: {
 		tgClose(){
 			this.tg.close()
+		},
+		sendformTgInput(){
+			this.test = 'Главная кнопка нажата!'
 		}
 	},
 	mounted() {
 		this.tg.MainButton.setParams({
 			text: 'Отправить данные!'
 		})
-		this.test = 'Кнопка должна появится!'
+
+		Telegram.WebApp.onEvent('mainButtonClicked', this.sendformTgInput)
 	},
 	watch: {
 		useTgButton(val){
