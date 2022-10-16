@@ -37,6 +37,12 @@ export default {
 		},
 		sendformTgInput(){
 			this.test = 'Главная кнопка нажата!'
+			let data = {
+				text1: this.text1,
+				text2: this.text2
+			}
+			this.tg.sendData(JSON.stringify(data))
+			this.tgClose()
 		}
 	},
 	mounted() {
@@ -44,7 +50,7 @@ export default {
 			text: 'Отправить данные!'
 		})
 
-		Telegram.WebApp.onEvent('mainButtonClicked', this.sendformTgInput)
+		this.tg.onEvent('mainButtonClicked', this.sendformTgInput)
 	},
 	watch: {
 		useTgButton(val){
